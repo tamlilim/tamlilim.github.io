@@ -9,101 +9,33 @@
   <link rel="stylesheet" type="text/css" media="screen" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
   <!-- Search bar -->
   <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" /> -->
-{% include collecttags.html %} <!-- generate tags -->
 {% seo %}
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121816895-2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-121816895-2');
-</script>
-
 </head>
 
 <body>
-
-{% include collecttags.html %}
-
+  
 <!-- HEADER -->
 <div id="header_wrap" class="outer">
-  <!-- <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a> -->
 
   <header class="container">
     <div id="header_box">
-      <div id="header_img">
-        <a href="{{ site.github.url }}">
-        <img src="{{site.baseurl}}/assets/img/flag_israel.png" alt="Flag of Israel" width="100">
-        </a>
-      </div>
       <div id="header_title">
         <h1 id="project_title"><a href="{{ site.github.url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
       </div>
     </div>
 
   </header>
 </div>
 
-<div class="container content_wrapper">
-  <div class="sidebar">
-    <!--
-    <input id="searchbar" type="text" placeholder="Search...">
-    {% for tag in tags %}
-    <button class="collapsible">{{ tag | capitalize }}</button>
-    <div class="content">
-    <ul>
-      {% for page in site.pages %}
-        {% if page.tags contains tag %}
-          <li> <a href="{{ page.url | prepend:site.baseurl}}">{{ page.title }}</a> </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-    </div>
-    {% endfor %}
-    <div class="toc">
-      <h2 class="toc_heading">Page Contents</h2>
-      {% include toc.html html=content %}
-    </div>
-    -->
-
-  </div>
-
   <!-- MAIN CONTENT -->
-  <div class="non-sidebar">
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <!-- <a href="{{site.github.repository_url}}/edit/master/{{page.path}}" class="edit_this_page">Edit</a> -->
         {{ content }}
       </section>
     </div>
-  </div>
-</div>
 
-<!-- FOOTER  -->
-<!--
-<div id="footer_wrap" class="outer">
-  <footer class="inner">
-  </footer>
-</div>
--->
 
-<script>
-// Script for folding
-var collapsibles = document.getElementsByClassName("collapsible");
-for (coll of collapsibles) {
-  coll.addEventListener("click", function() {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.display === "block") {
-      content.style.display = "none";
-    } else {
-      content.style.display = "block";
-    }
-  });
-}
-</script>
 </body>
 </html>
